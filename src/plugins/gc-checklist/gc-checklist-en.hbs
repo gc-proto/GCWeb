@@ -24,7 +24,7 @@
 	<dt>Last review</dt>
 	<dd>2020-12-31</dd>
 	<dt>Conforming to</dt>
-	<dd></dd>
+	<dd>&nbsp;</dd>
 	<dt>Guidance</dt>
 	<dd><a href="https://design.canada.ca/common-design-patterns/checkboxes-radio-buttons.html">Context-specific features - Canada.ca design pattern</a></dd>
 	<dt>Technical name</dt>
@@ -37,14 +37,14 @@
 <h2>Working example</h2>
 <section role="group">
 	<h3>Example 1</h3>
-	<p>To qualify, you must meet <strong>all</strong> of the following conditions: <small class="text-muted">(checklist, large box)</small></p>
+	<p>[To qualify, you must meet <strong>all</strong> of the following conditions:] <small class="text-muted">(checklist, large box)</small></p>
 	<ul class="provisional gc-checklist lst-none lst-spcd-2">
 		<li>
 			<div role="checkbox"
 				aria-checked="false"
 				tabindex="0"
 				id="cond1">
-				You have lost or will lose your employment or self-employment income for at least half of the 4-week period for which you are applying
+				[Condition 1]
 			</div>
 		</li>
 		<li>
@@ -52,7 +52,7 @@
 				aria-checked="false"
 				tabindex="0"
 				id="cond2">
-				You are a resident of Canada
+				[Condition 2]
 			</div>
 		</li>
 		<li>
@@ -60,22 +60,22 @@
 				aria-checked="false"
 				tabindex="0"
 				id="cond3">
-				You are 15 years of age or older when you apply
+				[Condition 3]
 			</div>
 		</li>
-		<li><span id="check-msg" class="label label-danger" wb-data-controls='{"success-cond": [cond1 cond2 cond3], "success-msg": "You are ready to call"}'>You need all of the above to call</span></li>
+		<li><span id="check-msg" class="label label-danger" data-gc-checklist='{"success-cond": [cond1, cond2, cond3]}' data-msg-success="You are ready to call">[You need all of the above to call]</span></li>
 	</ul>
 </section>
 <section role="group">
 	<h3>Example 2</h3>
-	<p>To qualify, you must meet <strong>all</strong> of the following conditions: <small class="text-muted">(checklist, small box)</small></p>
+	<p>[To qualify, you must meet <strong>all</strong> of the following conditions:] <small class="text-muted">(checklist, small box)</small></p>
 	<ul class="provisional gc-checklist gc-checklist-sm lst-none lst-spcd">
 		<li>
 			<div role="checkbox"
 				aria-checked="false"
 				tabindex="0"
 				id="cond4">
-				You have lost or will lose your employment or self-employment income for at least half of the 4-week period for which you are applying
+				[Condition 4]
 			</div>
 		</li>
 		<li>
@@ -83,7 +83,7 @@
 				aria-checked="false"
 				tabindex="0"
 				id="cond5">
-				You are a resident of Canada
+				[Condition 5]
 			</div>
 		</li>
 		<li>
@@ -91,9 +91,9 @@
 				aria-checked="false"
 				tabindex="0"
 				id="cond6">
-				You are 15 years of age or older when you apply
+				[Condition 6]
 			</div>
 		</li>
-		<li><span id="check-msg" class="label label-danger" wb-data-controls='{"success-cond": [cond1 cond2 cond3], "success-msg": "You are ready to call"}'>You need all of the above to call</span></li>
+		<li><span id="check-msg" class="label label-danger" data-gc-checklist='{"success-cond": [cond4 cond5 cond6], "success-msg": "You are ready to call"}'>[You need all of the above to call]</span></li>
 	</ul>
 </section>

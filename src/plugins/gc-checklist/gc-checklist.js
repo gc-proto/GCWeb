@@ -17,12 +17,7 @@ var componentName = "gc-checklist",
 	selector = ".provisional." + componentName,
 	initEvent = "wb-init" + selector,
 	$document = wb.doc,
-	defaults = {
-		toggle: {
-			stateOn: true,
-			stateOff: false
-		}
-	},
+	defaults = {},
 
 	/**
 	 * @method init
@@ -96,6 +91,17 @@ $document.on( "keydown", selector, function( event ) {
 		event.preventDefault();
 	}
 } );
+
+$document.on( "click", selector, function( event, data) {
+	var elm = event.target,
+		$elm = $( elm );
+
+	$elm.append("GC Checklist");
+
+	if ( data & data.success-cond) {
+		$elm.prepend("Do more")
+	}
+})
 
 // Bind the init event of the plugin
 $document.on( "timerpoke.wb " + initEvent, selector, init );
