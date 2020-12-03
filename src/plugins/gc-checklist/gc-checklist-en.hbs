@@ -1,0 +1,99 @@
+---
+{
+	"altLangPrefix": "gc-checklist",
+	"breadcrumb": [
+		{ "title": "GCWeb home", "link": "https://wet-boew.github.io/themes-dist/GCWeb/index-en.html" },
+		{ "title": "Provisional functionality", "link": "https://wet-boew.github.io/themes-dist/GCWeb/provisional-en.html" }
+	],
+	"dateModified": "2020-12-31",
+	"description": "Working examples for checklist - provisional feature",
+	"language": "en",
+	"parentdir": "component",
+	"tag": "checklist",
+	"title": "Checklist - Provisional feature"
+}
+---
+{{>alert-provisional-demos}}
+<span class="wb-prettify all-pre hide"></span>
+
+<dl class="horizontal">
+	<dt>Status</dt>
+	<dd>Provisional</dd>
+	<dt>Type</dt>
+	<dd>Canada.ca design pattern</dd>
+	<dt>Last review</dt>
+	<dd>2020-12-31</dd>
+	<dt>Conforming to</dt>
+	<dd></dd>
+	<dt>Guidance</dt>
+	<dd><a href="https://design.canada.ca/common-design-patterns/checkboxes-radio-buttons.html">Context-specific features - Canada.ca design pattern</a></dd>
+	<dt>Technical name</dt>
+	<dd>
+		<ul>
+			<li><code>gc-checklist</code></li>
+		</ul>
+	</dd>
+</dl>
+<h2>Working example</h2>
+<section role="group">
+	<h3>Example 1</h3>
+	<p>To qualify, you must meet <strong>all</strong> of the following conditions: <small class="text-muted">(checklist, large box)</small></p>
+	<ul class="provisional gc-checklist lst-none lst-spcd-2">
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond1">
+				You have lost or will lose your employment or self-employment income for at least half of the 4-week period for which you are applying
+			</div>
+		</li>
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond2">
+				You are a resident of Canada
+			</div>
+		</li>
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond3">
+				You are 15 years of age or older when you apply
+			</div>
+		</li>
+		<li><span id="check-msg" class="label label-danger" wb-data-controls='{"success-cond": [cond1 cond2 cond3], "success-msg": "You are ready to call"}'>You need all of the above to call</span></li>
+	</ul>
+</section>
+<section role="group">
+	<h3>Example 2</h3>
+	<p>To qualify, you must meet <strong>all</strong> of the following conditions: <small class="text-muted">(checklist, small box)</small></p>
+	<ul class="provisional gc-checklist gc-checklist-sm lst-none lst-spcd">
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond4">
+				You have lost or will lose your employment or self-employment income for at least half of the 4-week period for which you are applying
+			</div>
+		</li>
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond5">
+				You are a resident of Canada
+			</div>
+		</li>
+		<li>
+			<div role="checkbox"
+				aria-checked="false"
+				tabindex="0"
+				id="cond6">
+				You are 15 years of age or older when you apply
+			</div>
+		</li>
+		<li><span id="check-msg" class="label label-danger" wb-data-controls='{"success-cond": [cond1 cond2 cond3], "success-msg": "You are ready to call"}'>You need all of the above to call</span></li>
+	</ul>
+</section>

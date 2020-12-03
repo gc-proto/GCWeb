@@ -4,115 +4,114 @@
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
  *
  *
- *	Provisional GC Subway map menu
+ *	Provisional GC Checklist
 */
 
 .provisional {
+
 	&.gc-checklist {
-		/* (0,2,0) */
-		cursor: default;
-		display: inline-block;
-		padding-left: 30px;
-		position: relative;
-		&::before,
-		&::after {
-			/* (0,2,1) */
-			left: 0;
-			position: absolute;
-			top: 0;
-			transform: translate(-50%, -50%);
-		}
-		&::before {
-			/* (0,2,1) */
-			border: 2px solid hsl(0, 0%, 15%);
-			content: "";
-			height: 36px;
-			width: 36px;
-		}
-		&::after {
-			/* (0,2,1) */
-			content: none;
-		}
-		&:focus {
-			/* (0,3,0) */
-			outline: none;
-		}
-		&:checked::after {
-			/* (0,3,1) */
-			content: "";
-		}
-		&:active::before,
-		&[aria-checked="false"]:hover::before {
-			/* (0,3,1) */
-			background-image: linear-gradient(to bottom, hsl(300, 3%, 73%), hsl(300, 3%, 93%) 30%);
-		}
-		&[aria-checked="true"]::after {
-			/* (0,3,1) */
-			border-color: #333;
-			border-style: solid;
-			border-width: 0 5px 5px 0;
-			content: "";
-			display: inline-block;
-			height: 26px;
-			left: -4px;
-			top: 1px;
-			transform: rotate(45deg);
-			width: 13px;
-		}
-		&:focus::before {
-			/* (0,3,1) */
-			box-shadow: 0 0 3pt 2pt rgb(59, 153, 252);
-			box-sizing: content-box;
-			height: 16px;
-			width: 16px;
-		}
-	}
-	ul.gc-chcklst {
-		/* (0,2,1) */
 		font-size: 20px;
 		margin-left: 0;
 		padding-top: 6px;
+
+		#check-msg {
+			padding-left: -40px;
+		}
+		div {
+			cursor: default;
+			display: inline-block;
+			padding-left: 15px;
+			position: relative;
+
+			&::before,
+			&::after {
+				left: 0;
+				position: absolute;
+				top: 0;
+				transform: translate(-100%, 0%);
+			}
+
+			&::before {
+				border: 4px solid #fff;
+				box-shadow: 0 0 0 2px #000;
+				content: "";
+				display: inline-block;
+				height: 36px;
+				width: 36px;
+			}
+
+			&::after {
+				content: none;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&:checked::after {
+				content: "";
+			}
+
+			&:active::before,
+			&[aria-checked="false"]:hover::before {
+				background-image: linear-gradient(to bottom, hsl(300, 3%, 73%), hsl(300, 3%, 93%) 30%);
+			}
+
+			&[aria-checked="true"] {
+
+				&::before {
+					background-color: #318000;
+					border: none;
+				}
+
+				&::after {
+					border-color: white;
+					border-style: solid;
+					border-width: 0 5px 5px 0;
+					content: "";
+					display: inline-block;
+					height: 26px;
+					transform: translate(-185%, 10%) rotate(45deg);
+					width: 13px;
+				}
+			}
+
+			&:focus::before {
+				box-shadow: 0 0 0 2px #000, 0 0 8px 4px rgb(59, 153, 252);
+			}
+		}
+
+		.lst-none ul li {
+			list-style-type: disc;
+		}
+
+		#check-msg {
+			font-size: 18px;
+			margin-left: -36px;
+		}
 	}
-	.lst-none ul li {
-		/* (0,2,2) */
-		list-style-type: disc;
-	}
-	ul.gc-chcklst.sm-chcklst {
-		/* (0,3,1) */
+
+	&.gc-checklist-sm {
 		font-size: 17px;
-	}
-	.sm-chcklst [role="checkbox"]::before {
-		/* (0,3,1) */
-		height: 24px;
-		left: 10px;
-		top: 11px;
-		width: 24px;
-	}
-	ul.gc-chcklst {
-		&.sm-chcklst > li {
-			/* (0,3,2) */
+
+		[role="checkbox"] {
+
+			&::before {
+				height: 24px;
+				width: 24px;
+			}
+
+			&[aria-checked="true"]::after {
+				border-width: 0 4px 4px 0;
+				height: 16px;
+				width: 9px;
+			}
+		}
+
+		> li {
 			line-height: 23px;
 			margin-bottom: 25px;
 			margin-top: 10px;
 		}
-		[role="checkbox"][aria-checked="true"] {
-			&::before {
-				/* (0,4,2) */
-				background-color: #318000;
-			}
-			&::after {
-				/* (0,4,2) */
-				border-color: white;
-				border-width: 0 4px 4px 0;
-			}
-		}
-	}
-	.sm-chcklst [role="checkbox"][aria-checked="true"]::after {
-		/* (0,4,1) */
-		border-width: 0 4px 4px 0;
-		height: 16px;
-		left: 6px;
-		top: 1px;
-		width: 9px;
 	}
 }
