@@ -283,6 +283,21 @@
 			label {
 				padding-left: 10px;
 			}
+		}	
+	}
+
+	/* Responsive table - part of design, not responsive part */
+	&.gc-table  {
+		caption {
+			text-align: left;
+		}
+		td {
+			ul {
+				padding-inline-start: 20px;
+			}
+		}
+		.nobreak {
+			white-space: nowrap;
 		}
 	}
 

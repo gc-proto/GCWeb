@@ -12,3 +12,58 @@
 #wb-srch input {
 	max-width: inherit;
 }
+
+/* Responsive tables Mobile Cards */
+.provisional {
+  &.gc-table {
+    .left-xxs {
+      text-align: left;
+      clear: both;
+      display: block;
+    }
+    >tbody {
+      >tr {
+        >td {
+          &:first-child {
+            border-top: none;
+          }
+        }
+      }
+    }
+    tr {
+      border: 1px solid #ddd;
+      padding: .35em;
+      display: block;
+      margin-bottom: .625em;
+    }
+    border: 0;
+    caption {
+      font-size: 1.1em;
+    }
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    td {
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      &::before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+
