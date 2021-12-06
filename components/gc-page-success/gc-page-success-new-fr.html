@@ -1,0 +1,107 @@
+---
+{
+	"altLangPage": "gc-page-success-new-en.html",
+	"altLangPrefix": "gc-page-success_this-var-is-broken-in-modern-gcweb",
+	"breadcrumb": [ "this-var-is-broken-in-modern-gcweb" ],
+	"breadcrumbs": [
+		{ "title": "Accueil GCWeb", "link": "https://wet-boew.github.io/themes-dist/GCWeb/index-fr.html" }
+	],
+	"css": ["https://use.fontawesome.com/releases/v5.8.1/css/all.css"],
+	"dateModified": "2021-12-06",
+	"description": "Widget de rétroaction pour Canada.ca",
+	"language": "fr",
+	"title": "Widget succès de page (NEW) - Exemple pratique",
+	"noReportProblem": "true"
+}
+---
+{% include alert-provisional.html siteroot="../../" %}
+
+<style>
+@media screen and (max-width: 767px) {
+	.wb-enable .text-center-xs-js {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.d-flex {
+		display: flex;
+	}
+
+	.align-items-center {
+		align-items: center;
+	}
+}
+</style>
+
+<div class="wb-prettify all-pre hide"></div>
+
+<div class="row row-no-gutters mrgn-tp-xl">
+	<div class="col-sm-7 col-lg-6">
+		<figure class="gc-pg-hlpfl provisional well mrgn-bttm-0" aria-live="polite">
+			<figcaption class="wb-inv">Rétroaction de la page</figcaption>
+			<form id="gc-pg-hlpfl-frm" action="/gc/services/generateemail" method="post" autocomplete="off" class="provisional wb-postback" data-wb-postback="{&quot;success&quot;:&quot;.gc-pg-hlpfl-thnk&quot;,&quot;content&quot;:&quot;#gc-pg-hlpfl-frm&quot;}">
+				<input type="hidden" name="institutionopt" value="Institution - required - must use same abbreviation value EN and FR">
+				<input type="hidden" name="themeopt" value="Theme - required - must use same value EN and FR">
+				<input type="hidden" name="sectionopt" value="Section - required but can be blank - same value EN and FR">
+				<input type="hidden" name="pageTitle" value="Page title (EN) - required">
+				<input type="hidden" name="emailTemplate" value="servcan/gc-pagesuccessen">
+				<fieldset class="gc-pg-hlpfl-btn chkbxrdio-grp row row-no-gutters d-flex align-items-center">
+					<legend class="col-xs-12 col-sm-7 col-md-8 text-center-xs-js mrgn-tp-sm"><span class="field-name">Avez-vous trouvé ce que vous cherchiez?</span></legend>
+					<div class="col-xs-2 col-sm-5 col-md-4 text-right nojs-show">
+						<button type="submit" name="helpful" value="Yes" class="btn btn-primary" data-gc-analytics-wtph aria-describedby="why-note">Yes</button>
+					</div>
+					<div class="col-xs-12 col-sm-5 col-md-4 text-right text-center-xs-js nojs-hide">
+						<button type="submit" name="helpful" value="Yes" class="btn btn-primary" data-gc-analytics-wtph>Oui</button>
+						<button type="button" class="btn btn-primary mrgn-lft-sm" data-wb-doaction="[
+						{&quot;action&quot;:&quot;removeClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-no&quot;,&quot;class&quot;:&quot;nojs-show&quot;},
+						{&quot;action&quot;:&quot;addClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-btn&quot;,&quot;class&quot;:&quot;hide&quot;}
+						]" data-gc-analytics-wtph-no>Non</button>
+					</div>
+				</fieldset>
+				<p id="why-note" class="nojs-show mrgn-tp-lg mrgn-bttm-md"><strong>Sinon, dites nous pourquoi ci-dessous&nbsp;:</strong></p><!--NOTE: For noscript and basic HTML modes.-->
+				<div class="gc-pg-hlpfl-no nojs-show">
+					<p class="nojs-hide wb-inv"><strong>Dites nous pourquoi ci-dessous&nbsp;:</strong></p><!--NOTE: For JS mode after the transition (to instruct screen readers about what to do next).-->
+					<div aria-live="off">
+						<fieldset class="chkbxrdio-grp">
+							<legend><span class="field-name">Qu’est-ce qui n’allait pas?</span></legend>
+							<div class="radio">
+								<label for="problem1">
+									<input name="problem" id="problem1" type="radio" value="I can't find the information" data-gc-analytics-wtph-value="I can't find the information-Je ne peux pas trouver l'information" data-gc-analytics-collect="notPrivate"> Je ne peux pas <strong>trouver</strong> l’information
+								</label>
+							</div>
+							<div class="radio">
+								<label for="problem2">
+									<input name="problem" id="problem2" type="radio" value="The information is hard to understand" data-gc-analytics-wtph-value="The information is hard to understand-L'information est difficile à comprendre" data-gc-analytics-collect="notPrivate"> L'information est difficile à <strong>comprendre</strong>
+								</label>
+							</div>
+							<div class="radio">
+								<label for="problem3">
+									<input name="problem" id="problem3" type="radio" value="There was an error / something didn't work" data-gc-analytics-wtph-value="There was an error or something didn't work-Il y avait une erreur ou quelque chose ne fonctionnait pas" data-gc-analytics-collect="notPrivate"> Il y avait une erreur / quelque chose <strong>ne fonctionnait pas</strong>
+								</label>
+							</div>
+							<div class="radio">
+								<label for="problem4">
+									<input name="problem" id="problem4" type="radio" value="Other reason" data-gc-analytics-wtph-value="Other reason-Autre raison" data-gc-analytics-collect="notPrivate"> Autre raison
+								</label>
+							</div>
+						</fieldset>
+						<div class="form-group">
+							<label for="problem6" class="mrgn-tp-sm mrgn-bttm-0"><span class="field-name">Veuillez fournir plus de détails (maximum de 300 caractères)</span></label>
+							<textarea id="problem6" aria-describedby="problem6-note" name="details" class="form-control full-width" maxlength="300"></textarea>
+							<p id="problem6-note"><small>Vous ne recevrez aucune réponse. Les numéros de téléphone et les adresses électroniques seront supprimés.</small></p>
+						</div>
+						<button type="submit" name="helpful" value="No" class="btn btn-primary" data-gc-analytics-wtph-submit>Soumettre</button>
+						<input type="hidden" name="problem" value="">
+					</div>
+				</div>
+			</form>
+			<div class="gc-pg-hlpfl-thnk hide">
+				<p class="mrgn-tp-sm mrgn-bttm-0"><span class="far fa-check-circle text-success mrgn-rght-sm" aria-hidden="true"></span> Merci de vos commentaires.</p>
+			</div>
+		</figure>
+	</div>
+	<div class="col-sm-3 col-sm-offset-1 col-lg-offset-3">
+		<div class="wb-share" data-wb-share="{&quot;pnlId&quot;:&quot;pnlShrPg&quot;, &quot;lnkClass&quot;: &quot;btn btn-default btn-block mrgn-tp-md&quot;}"></div>
+	</div>
+</div>
