@@ -9,6 +9,7 @@ sprite*.png
 wet-boew-cdn/
 wet-boew-theme-cdn/
 wet-boew-dist/
+_site/
 
 # OS generated files #
 .DS_Store
